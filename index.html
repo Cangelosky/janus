@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<title>JANUS</title>
+<meta name="theme-color" content="#F3F1EA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#070D1F" media="(prefers-color-scheme: dark)">
+<meta name="robots" content="noindex,nofollow">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="JANUS">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="favicon.png" type="image/png" sizes="64x64">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main id="login" class="login">
+  <form id="loginForm" autocomplete="off">
+    <img class="medal" src="medaglione.png" width="132" height="132" alt="Medaglione JANUS">
+    <h1>JANUS</h1>
+    <p class="sub">Navicella di osservazione</p>
+    <label for="pw">Parola d'ordine</label>
+    <input id="pw" type="password" autocomplete="current-password" required autofocus>
+    <label class="check"><input id="remember" type="checkbox" checked> Ricorda su questo dispositivo</label>
+    <button type="submit">Entra</button>
+    <p id="loginMsg" class="msg" role="alert"></p>
+  </form>
+</main>
+
+<div id="app" hidden>
+  <aside class="side">
+    <div class="brand">
+      <img class="medal-sm" src="medaglione.png" width="34" height="34" alt="">
+      <span>JANUS</span>
+    </div>
+    <nav id="nav" aria-label="Sezioni"></nav>
+    <div class="side-foot">
+      <span id="stamp" class="stamp"></span>
+      <div class="row-btn"><button id="refresh" class="ghost" title="Ricarica i dati">↻ Aggiorna</button><button id="logout" class="ghost">Esci</button></div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="ticker" id="ticker" aria-label="Prezzi principali"></div>
+    <main id="view"></main>
+  </div>
+
+  <nav class="dock" id="dock" aria-label="Sezioni"></nav>
+</div>
+
+<div id="sheet" class="sheet" hidden>
+  <div class="sheet-bg" data-close></div>
+  <div class="sheet-body" role="dialog" aria-modal="true">
+    <button class="close" data-close aria-label="Chiudi">✕</button>
+    <div id="sheetContent"></div>
+  </div>
+</div>
+<div id="toast" class="toast" hidden></div>
+
+<script src="app.js"></script>
+</body>
+</html>
